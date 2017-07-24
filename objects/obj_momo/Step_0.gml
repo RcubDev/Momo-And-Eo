@@ -8,12 +8,17 @@ var isOnGround = place_meeting(x,y + 1, obj_collision_tiles); //If pixel underne
 var move = key_right - key_left
 
 //THIS WILL MAKE HIM MOVE EASILY IN AIR
-//var currentMoveDirection = sign(nHorizSpeed);
+var currentMoveDirection = sign(nHorizSpeed);
 //if(currentMoveDirection == -move){
 //	nHorizSpeed = 0;
 //}
+if(isOnGround){
+	if(currentMoveDirection == -move){
+		nHorizSpeed = 0;
+	}
+}
 
-show_debug_message(isOnGround);
+
 if(move != 0) {
 	nHorizSpeed += move * nAcceleration;
 	nHorizSpeed = clamp(nHorizSpeed, -nMaxSpeed, nMaxSpeed)
