@@ -3,19 +3,23 @@
 key_left = keyboard_check(vk_left);
 key_right = keyboard_check(vk_right);
 key_up = keyboard_check(vk_up);
+var isOnGround = place_meeting(x,y + 1, obj_collision_tiles); //If pixel underneath player is an obj_collision_tile return true
 //Movement below:
 var move = key_right - key_left
 if(move != 0) {
 	nHorizSpeed += move * nAcceleration;
 	nHorizSpeed = clamp(nHorizSpeed, -nMaxSpeed, nMaxSpeed)
 }
+else if(!isOnGround){
+	nHorizSpeed = lerp(nHorizSpeed, 0, nFriction) //adding this will create an arc to jumps
+}
 else {
-	nHorizSpeed = lerp(nHorizSpeed, 0, .1)
+	nHorizSpeed = 0;
 }
 
 //nHorizSpeed = move * nAcceleration;
 
-if(key_up && place_meeting(x,y + 1, obj_collision_tiles)){
+if(key_up && isOnGround){
 	nVertSpeed -= 10;
 }
 nVertSpeed += nGravity
@@ -38,5 +42,7 @@ if(place_meeting(x, y + nVertSpeed, obj_collision_tiles)){
 	}
 	nVertSpeed = 0;
 }
+
+
 y += nVertSpeed;
 
