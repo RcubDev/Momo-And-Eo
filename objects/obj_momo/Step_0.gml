@@ -16,7 +16,7 @@ else {
 //nHorizSpeed = move * nAcceleration;
 
 if(key_up && place_meeting(x,y + 1, obj_collision_tiles)){
-	nVertSpeed -= 7;
+	nVertSpeed -= 10;
 }
 nVertSpeed += nGravity
 
@@ -30,6 +30,7 @@ if(place_meeting(x+nHorizSpeed, y, obj_collision_tiles)){ //If a collision check
 }
 
 x += nHorizSpeed;
+show_debug_message(nHorizSpeed)
 //Check collisions verticle
 if(place_meeting(x, y + nVertSpeed, obj_collision_tiles)){
 	while(!place_meeting(x, y + sign(nVertSpeed), obj_collision_tiles)){
