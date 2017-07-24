@@ -10,7 +10,7 @@ if(move != 0) {
 	nHorizSpeed = clamp(nHorizSpeed, -nMaxSpeed, nMaxSpeed)
 }
 else {
-	nHorizSpeed = lerp(nHorizSpeed, 0, .7)
+	nHorizSpeed = lerp(nHorizSpeed, 0, .1)
 }
 
 //nHorizSpeed = move * nAcceleration;
