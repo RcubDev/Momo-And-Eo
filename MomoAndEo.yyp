@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "1cebdbd1-3bf6-4085-80d7-1d50d2b812a9",
+            "Value": {
+                "id": "30b059e9-6e13-4b52-a068-8fa929e094ba",
+                "resourcePath": "objects\\obj_eo\\obj_eo.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1f0caa4f-9399-420c-bdcc-b0cc42ca303e",
             "Value": {
                 "id": "e1ef2210-9fcd-4418-a1c5-a3d648c89292",
